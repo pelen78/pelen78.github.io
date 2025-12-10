@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelen Montes Chávez | pelen13.com</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            /* Thinner strip since no content */
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 1vh;
+            /* antes 100vh */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px 40px;
+            /* agregamos 40px abajo para que no se vea tan separado */
+        }
+
+
+        .hero-title-container {
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .hero-hi {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .hero-welcome {
+            font-family: 'Pacifico', cursive;
+            /* Cute font */
+            font-size: 5rem;
+            font-weight: 400;
+            /* Pacifico is bold by default */
+            line-height: 1.2;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            padding-bottom: 10px;
+            /* Prevent descender clipping */
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 20px 20px 80px;
+            /* Reduced top padding significantly */
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            /* For divider positioning if needed */
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+            border-radius: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: #fff;
+            width: 250px;
+            /* Fixed width for square-like appearance */
+            height: 200px;
+            /* Fixed height to uniform sizes */
+            text-align: center;
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card:hover i {
+            /* Rainbow gradient effect for icon on hover would be cool, but simple color change is safer for icons unless using background-clip on text */
+            color: #000;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-color: transparent;
+        }
+
+        .contact-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            border-top: 1px solid #f5f5f5;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .hero-hi,
+            .hero-welcome {
+                font-size: 3.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav></nav>
+
+    <!-- Hero / About Section -->
+    <section id="hero">
+        <div id="about"></div> <!-- Anchor for navigation -->
+        <div class="hero-title-container">
+            <span class="hero-hi">Hi.</span>
+            <span class="hero-welcome">Welcome</span>
+        </div>
+        <p class="hero-subtitle">
+            I’m Pelen Montes Chávez, a high school teacher and creative tech enthusiast.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-divider"></div>
+        <h2 class="section-title">Let’s Connect</h2>
+
+        <div class="contact-grid">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/pelen.mch/" target="_blank" class="contact-card">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span class="contact-label">Facebook</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/pelen13/" target="_blank" class="contact-card">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="contact-label">Instagram</span>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@pelenmch" target="_blank" class="contact-card">
+                <i class="fa-brands fa-tiktok"></i>
+                <span class="contact-label">TikTok</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hi@pelen13.com" class="contact-card">
+                <i class="fa-regular fa-envelope"></i>
+                <span class="contact-label">Email</span>
+                <span class="contact-detail">hi@pelen13.com</span>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+528332189030" class="contact-card">
+                <i class="fa-solid fa-phone"></i>
+                <span class="contact-label">Phone</span>
+                <span class="contact-detail">+52 833 218 9030</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Pelen13. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
